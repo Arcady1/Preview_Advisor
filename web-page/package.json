@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "browserify js/blocks/index.js js/blocks/DnD.js -o js/bundle.js",
     "start": "node server.js"
   },
   "author": "",
