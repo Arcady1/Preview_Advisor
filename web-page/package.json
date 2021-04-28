@@ -1,6 +1,9 @@
 {
   "name": "web-page",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.0.0"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {
