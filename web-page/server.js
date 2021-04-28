@@ -13,3 +13,4 @@ app.get("/", (request, response) => {
 app.listen(PORT, () => {
     console.log('Server started: http://localhost:' + app.get('port') + '/');
 });
+console.log("test");
