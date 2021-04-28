@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreviewAdvisor</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="index-container index-container_margin">
+        <div class="main main_padding">
+            <div class="header__wrapper header__wrapper_margin" id="headerWrapper">
+                <p class="header__wrapper_bgText header__wrapper_bgText_padding_and-margin">Drag and drop Image, or
+                    select file from your device</p>
+                <form class="header" id="header">
+                    <input type="file" multiple accept="image/*" class="header__DnDarea" id="DnDarea">
+                    <label for="DnDarea">
+                        <div class="BlueButton download-button_set" id="downloadButton">
+                            <div for="DnDarea" class="BlueButton_txt">
+                                <p>Download images</p>
+                                <p class="BlueButton_txt-max-imgs">max: 10</p>
+                            </div>
+                        </div>
+                    </label>
+                </form>
+                <div class="DnDdeactivateBlock" id="DnDdeactivateBlock"></div>
+            </div>
+            <div class="content__wrapper">
+                <div class="content__button-wrapper" id="PredictButtonWrapper">
+                    <div class="BlueButton predict-button_set" id="PredictButton">
+                        <div class="BlueButton_txt">
+                            <p id="but_txt">Predict</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content__img-wrapper">
+                        <div class="content__all-images" id="inputImgs">
+                        </div>
+                        <div class="content__all-images" id="predictImgs"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas class="canvas-for-tf" id="canvasForTfImgResize" width="224" height="224"></canvas>
+    <div class="preloader" id="preloader">
+        <div class="preloader-err" id="preloader-err">
+            <p class="preloader-err__txt">Error while loading the model...</p>
+        </div>
+    </div>
+
+    <script src="./js/bundle.js"></script>
+</body>
+
+</html>

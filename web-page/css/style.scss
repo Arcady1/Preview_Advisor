@@ -1,0 +1,334 @@
+@import 'null-style';
+@import '../fonts/fonts';
+@import '../source/var';
+@import '../source/templ';
+@import '../source/mixin';
+@import 'media-style';
+
+html {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    background-color: var(--body-bgc);
+    overflow: hidden;
+}
+
+.BlueButton {
+    display: inline-block;
+    transition: var(--transitionImgs);
+
+    .BlueButton_txt {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: auto;
+        min-width: 165px;
+        height: var(--blue-button-height);
+        cursor: pointer;
+        border: 3px solid var(--downloadImageButtonBorderColor);
+        border-radius: 60px;
+        background-color: #fff;
+        transition: var(--transition);
+        opacity: 1;
+        position: relative;
+
+        padding: 0 2%;
+
+        .BlueButton_txt-max-imgs {
+            position: absolute;
+            bottom: 7%;
+            transition: var(--transition);
+
+            color: #fff;
+            font-size: calc(1rem / 1.6);
+            text-transform: uppercase;
+        }
+    }
+
+    .BlueButton_txt:hover {
+        background-color: #000;
+        color: #fff;
+        border-color: transparent;
+    }
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--maxWidth);
+    min-width: var(--minWidth);
+    min-height: 100vh;
+    background-color: var(--body-bgc);
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 1080px;
+        background-color: var(--body-bgc);
+    }
+
+    .main_padding {
+        padding: 0 5%;
+    }
+
+    .header__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+        height: 30vh;
+        min-height: 200px;
+        max-height: 300px;
+        position: relative;
+        transition: var(--transitionImgs);
+        z-index: var(--headerZindex);
+        background-color: var(--DnDbgc);
+        border: 2px dashed #000;
+
+        .header__wrapper_bgText {
+            display: block;
+            color: #000;
+            text-align: center;
+        }
+
+        .header__wrapper_bgText_padding_and-margin {
+            padding: 0 5%;
+            margin-bottom: 10%;
+        }
+
+        .DnDdeactivateBlock {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: var(--DnDdeactivateBlockZindex);
+        }
+    }
+
+    .header__wrapper_margin {
+        margin: 0 auto;
+    }
+
+    .header__wrapper:hover {
+        background-color: var(--DnDbgcHover);
+    }
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: var(--transitionImgs);
+        z-index: var(--headerZindex);
+        background-color: transparent;
+
+        .header__DnDarea {
+            display: none;
+        }
+
+        .download-button_set {
+            @extend %download-button_set;
+        }
+    }
+
+    .header_margin {
+        margin-bottom: calc(25px + 20*(100vw - 320px)/(1366 - 320));
+    }
+}
+
+.content__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .content__button-wrapper {
+        justify-content: center;
+        position: absolute;
+        top: calc(50% - (70px / 2));
+        left: 0;
+        z-index: -1;
+
+        .predict-button_set {
+            @extend %predict-button_set;
+        }
+    }
+}
+
+.content {
+    width: inherit;
+    max-width: inherit;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+
+    .content__img-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: auto;
+        height: var(--content-width);
+        position: relative;
+
+        .content__all-images {
+            display: flex;
+            justify-content: space-between;
+            width: auto;
+            height: var(--image-height);
+            position: relative;
+
+            .content-img__wrapper {
+                display: block;
+                width: auto;
+                height: 100%;
+                margin: 0 5%;
+                position: relative;
+                transition: var(--transitionImgs);
+
+                .content-img {
+                    display: block;
+                    width: inherit;
+                    max-width: inherit;
+                    height: inherit;
+                    max-height: inherit;
+                }
+
+                .img-delete__button {
+                    display: block;
+                    position: absolute;
+                    right: var(--img-delete__button_pos);
+                    top: var(--img-delete__button_pos);
+                    width: var(--img-delete__button_size);
+                    height: var(--img-delete__button_size);
+                    background: url("../img/delete.svg") no-repeat;
+                    transition: var(--transition);
+                }
+
+                .img-delete__button:hover {
+                    background: url("../img/delete_hover.svg") no-repeat;
+                }
+            }
+
+            .content-img__wrapper:first-child {
+                margin-left: 0;
+            }
+
+            .content-img__wrapper:last-child {
+                margin-right: 0;
+            }
+
+            .predicted-img__wrapper {
+                display: none;
+                opacity: 0;
+                height: 100%;
+                width: auto;
+                position: relative;
+
+                .predicted-img {
+                    display: block;
+                    width: inherit;
+                    height: 100%;
+                }
+
+                .predicted-canvas {
+                    @extend %absolute-block-in-predicted-img__wrapper-set;
+
+                    width: 100%;
+                    z-index: 0;
+                    opacity: var(--predicted-canvas-opacity);
+                    transition: var(--transition);
+                }
+
+                .predicted-img_txt {
+                    @extend %predicted-img_txt;
+                }
+
+                .predicted-img__loading-bar {
+                    @extend %absolute-block-in-predicted-img__wrapper-set;
+                    @include predictiom-img-set(var(--loadingBarBgc),
+                        var(--predicted-img-loading-bar),
+                        var(--predicted-img-loading-bar-size));
+                }
+
+                .predicted-img__error-img {
+                    @extend %absolute-block-in-predicted-img__wrapper-set;
+                    @include predictiom-img-set(var(--loadingBarBgc),
+                        var(--predicted-img-error),
+                        var(--predicted-img-loading-bar-size));
+
+                    opacity: 0;
+                }
+            }
+        }
+
+        .content-img_hidden-img {
+            display: block;
+            width: 0;
+            height: 240px;
+            position: relative;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.canvas-for-tf {
+    display: none;
+    outline: 1px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.preloader {
+    @extend %absolute-block-in-predicted-img__wrapper-set;
+    @include predictiom-img-set(var(--body-bgc),
+        var(--preloader-src),
+        var(--preloader-size));
+
+    opacity: 1;
+    transition: var(--transition);
+    z-index: var(--preloaderZindex);
+
+    .preloader-err {
+        @extend %absolute-block-in-predicted-img__wrapper-set;
+        @include predictiom-img-set(var(--body-bgc),
+            var(--preloader-err-src),
+            var(--preloader-size));
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+
+        .preloader-err__txt {
+            position: relative;
+            top: calc(50% + var(--preloader-size));
+        }
+    }
+}
+
+.index-container_margin {
+    margin: 0 auto;
+}

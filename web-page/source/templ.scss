@@ -1,0 +1,37 @@
+%download-button_set {
+    margin-bottom: calc(25px + 20*(100vw - 320px)/(1366 - 320));
+}
+
+%predict-button_set {
+    width: 100%;
+    height: var(--blue-button-height);
+    opacity: 0;
+    transition: var(--transitionImgs);
+}
+
+%predicted-img_txt {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: var(--predicted-score-txt-size);
+    background-color: #000;
+    opacity: .7;
+
+    font-size: var(--predicted-score-txt-size);
+    line-height: var(--predicted-score-txt-size);
+    text-align: center;
+    color: #fff;
+}
+
+%absolute-block-in-predicted-img__wrapper-set {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: inherit;
+    height: 100%;
+    opacity: 1;
+    transition: var(--transitionImgs);
+}

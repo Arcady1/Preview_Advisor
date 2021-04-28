@@ -1,0 +1,54 @@
+:root {
+    // Preloader
+    --preloader-src: url("../img/predict-preloader.gif");
+    --preloader-size: 50px;
+    // Preloader Error
+    --preloader-err-src: url("../img/predict-error.svg");
+
+    // Main
+    --body-bgc: #fff;
+    --maxWidth: 1366px;
+    --minWidth: 320px;
+    --transition: .5s;
+    --transitionImgs: .5s;
+
+    // DnD area
+    --downloadImageButtonBorderColor: #08c6ff;
+    --DnDbgc: #eee;
+    --DnDbgcHover: #ddd;
+
+    // Downloaded-img
+    --img-delete__button_pos: 2%;
+    --img-delete__button_size: 30px;
+
+    // Predicted-img
+    --predicted-score-txt-size: 1.4rem;
+
+    // Content
+    --content-width: 500px;
+
+    // Blue Button
+    --blue-button-height: 55px;
+
+    // z-index
+    --headerZindex: 1;
+    --DnDdeactivateBlockZindex: 2;
+    --contentButtonWrapperZindex: 1;
+    // Preloader
+    --preloaderZindex: 1000;
+
+    // Imgs
+    --image-height: 240px;
+    // * width: auto
+
+    // Predicted Img Loading Bar Animation
+    --predicted-img-loading-bar: url("../img/predict-preloader.gif");
+    --predicted-img-loading-bar-size: 50px;
+    --loadingBarBgc: #fff;
+
+    // Predicted Img Error 
+    --predicted-img-error: url("../img/predict-error.svg");
+
+    // Predicted Canvas Opacity
+    --predicted-canvas-opacity: .8;
+}
