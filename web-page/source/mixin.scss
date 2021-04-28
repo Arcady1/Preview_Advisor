@@ -1,7 +1,0 @@
-@mixin predictiom-img-set($bgc, $img, $size, $pos: center, $repeat: no-repeat) {
-    background-color: $bgc;
-    background-image: $img;
-    background-size: $size;
-    background-position: $pos;
-    background-repeat: $repeat;
-}
