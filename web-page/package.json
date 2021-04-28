@@ -1,9 +1,6 @@
 {
   "name": "web-page",
   "version": "1.0.0",
-  "engines": {
-    "node": "16.0.0"
-  },
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -14,9 +11,12 @@
   "license": "MIT",
   "dependencies": {
     "@tensorflow/tfjs": "^3.4.0",
+    "browserify": "^17.0.0",
     "express": "^4.17.1",
     "jquery": "^3.6.0",
-    "mathjs": "^9.3.2",
+    "mathjs": "^9.3.2"
+  },
+  "devDependencies": {
     "browserify": "^17.0.0"
   }
 }
