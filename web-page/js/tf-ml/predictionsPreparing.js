@@ -5,11 +5,11 @@ const math = require('mathjs');
 
 function predictionMatrixResize(predArr, sizeXPredictions, sizeYPredictions, originalImgWidth, originalImgHeight) {
     // Reshape predArr => [sizeXPredictions, sizeYPredictions]
-    predArr = math.reshape(predArr, [sizeXPredictions, sizeYPredictions]);
+    predArr = math.reshape(predArr, [sizeYPredictions, sizeXPredictions]);
     // => Tensor [sizeXPredictions, sizeYPredictions, 1]
     predArr = tf.expandDims(predArr, 2);
     // Tensor predArr resize [originalImgWidth originalImgHeight 1]
-    predArr = tf.image.resizeNearestNeighbor(predArr, [originalImgWidth, originalImgHeight]);
+    predArr = tf.image.resizeNearestNeighbor(predArr, [originalImgHeight, originalImgWidth]);
     // Resized Predictions Array (Array.length = originalImgWidth * originalImgHeight)
     predArr = predArr.dataSync();
 

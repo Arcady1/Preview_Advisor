@@ -39,7 +39,7 @@ async function modelPredictions(userFiles) {
             rectSize = 32;
             rectangleData.rectangleSize = rectSize;
             // Steps
-            step_x = rectSize - (rectSize / 4);
+            step_x = rectSize - (rectSize / 2);
             step_y = rectSize - (rectSize / 2);
 
             // Getting the averall score
@@ -52,8 +52,6 @@ async function modelPredictions(userFiles) {
                 for (let x = 0; x < imgSize; x += step_x) {
                     if (y == 0)
                         xRectCount++;
-                    if (x == 0)
-                        yRectCount++;
 
                     rectangleData.rectangleOffsetX = x;
                     rectangleData.rectangleOffsetY = y;
@@ -63,6 +61,7 @@ async function modelPredictions(userFiles) {
                     // Array of current image Predictions [xRectCount * yRectCount]
                     currImgValuesArr.push(prediction);
                 }
+                yRectCount++;
             }
 
             // Resize prediction matrix to original image size
