@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "deploy": "git add . & git commit -am 'deploy' & git push origin main & git push heroku main"
+    "deploy": "git add . && git commit -am 'deploy' && git push origin main && git push heroku main"
   },
   "author": "",
   "license": "MIT",
